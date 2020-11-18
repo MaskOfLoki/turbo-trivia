@@ -1,0 +1,131 @@
+@import '../../../utils/index.scss';
+@value fileUpload from '../../../components/file-upload/module.scss';
+
+.screen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .label {
+    color: white;
+    font-size: 1.4vw;
+    font-weight: bold;
+  }
+
+  .leftPanel {
+    width: 65%;
+    height: 90%;
+    border-radius: 1.5vw;
+    background: #1a1a29;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .mobileBackground {
+      width: 40%;
+      margin-left: 5%;
+      margin-right: 2.5%;
+
+      .label {
+        font-size: 1.5vw;
+        margin-top: 5%;
+        margin-bottom: 5%;
+      }
+
+      .upload {
+        width: 22.5vw;
+        height: 22.5vw;
+        button {
+          min-height: 1.75vw;
+          height: 1.75vw;
+          width: auto;
+          padding-left: 1vw;
+          padding-right: 1vw;
+        }
+
+        .fileUpload {
+          background: #35353e;
+          border: none;
+        }
+      }
+    }
+
+    .mobilePreview {
+      @extend .mobileBackground;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 2.5%;
+
+      .label {
+        width: 80%;
+        margin-left: 5%;
+        margin-top: 3.5%;
+        margin-bottom: 3.5%;
+      }
+
+      .previewContainer {
+        width: 100%;
+        flex: 1;
+        margin-bottom: 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .previewLeftBtn {
+          @extend .button;
+          width: 10%;
+          height: 3.5vw;
+          mask-repeat: no-repeat;
+          mask-position: center;
+          mask-image: url('../../../../assets/icons/preview-arrow-left.svg');
+          mask-size: contain;
+          background: white;
+        }
+
+        .previewRightBtn {
+          @extend .previewLeftBtn;
+          mask-image: url('../../../../assets/icons/preview-arrow-right.svg');
+        }
+
+        .previewWrapper {
+          flex: 1;
+          height: 100%;
+          border-radius: 1vw;
+          background: #35353e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          .preview {
+            width: 17.5vw;
+            height: 30vw;
+          }
+        }
+      }
+    }
+  }
+
+  .rightPanel {
+    margin-left: 2.5%;
+    width: 24%;
+    height: 80%;
+    border-radius: 1vw;
+    padding: 2%;
+    background: #1a1a29;
+
+    .label {
+      margin-bottom: 0.5vw;
+    }
+
+    .mobileIntroRow {
+      margin-bottom: 2vw;
+    }
+  }
+}

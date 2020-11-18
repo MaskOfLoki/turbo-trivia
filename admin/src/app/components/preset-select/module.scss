@@ -1,0 +1,22 @@
+.control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  select {
+    width: 7vw;
+    height: 2.25vw;
+    margin-right: 1vw;
+    text-transform: uppercase;
+  }
+
+  button {
+    height: 2vw;
+    margin-right: 1vw;
+  }
+
+  .presetDeleteBtn {
+    background: #dc76167f;
+    border: 0.12vw solid #dc7616;
+  }
+}

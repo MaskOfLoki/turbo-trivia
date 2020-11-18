@@ -1,0 +1,41 @@
+{
+  "name": "turbo-trivia",
+  "version": "2.0.0",
+  "repository": "https://github.com/GameChangerInteractive/turbo-trivia-2.git",
+  "author": "Anshu Kumar <webpartner0319@outlook.com>",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"yarn dev:admin\" \"yarn dev:mainboard\" \"yarn dev:mobile\"",
+    "xeo": "concurrently -k \"yarn admin:xeo\" \"yarn mobile:xeo\"  \"yarn mainboard:xeo\"",
+    "dev:admin": "cd admin && yarn dev",
+    "dev:mainboard": "cd mainboard && yarn dev",
+    "dev:mobile": "cd mobile && yarn dev",
+    "admin:xeo": "cd admin && yarn xeo",
+    "mobile:xeo": "cd mobile && yarn xeo",
+    "mainboard:xeo": "cd mainboard && yarn xeo",
+    "lint": "concurrently --kill-others-on-fail \"yarn lint:common\" \"yarn lint:admin\" \"yarn lint:mainboard\" \"yarn lint:mobile\"",
+    "lint:admin": "cd admin && yarn lint",
+    "lint:mainboard": "cd mainboard && yarn lint",
+    "lint:mobile": "cd mobile && yarn lint",
+    "lint:common": "cd common && yarn lint",
+    "build": "yarn build:admin && yarn build:mainboard && yarn build:mobile",
+    "build:admin": "cd admin && yarn build",
+    "build:mainboard": "cd mainboard && yarn build",
+    "build:mobile": "cd mobile && yarn build",
+    "postinstall": " yarn install:common && yarn install:admin && yarn install:mainboard && yarn install:mobile",
+    "install:admin": "cd admin && yarn",
+    "install:mainboard": "cd mainboard && yarn",
+    "install:mobile": "cd mobile && yarn",
+    "install:common": "cd common && yarn"
+  },
+  "devDependencies": {
+    "@gamechangerinteractive/netlify-deploy": "1.0.46",
+    "concurrently": "^5.2.0",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}

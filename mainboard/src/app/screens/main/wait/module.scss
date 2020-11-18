@@ -1,0 +1,55 @@
+.screen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .gameTitle {
+    width: 90%;
+    text-align: center;
+    font-size: 6.5vw;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 2vmin;
+    .title {
+      width: 100%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .welcomeText {
+    @extend .gameTitle;
+    font-size: 6vw;
+    justify-content: center;
+    padding-bottom: 0%;
+    margin-bottom: 15vmin;
+  }
+  .logoRow {
+    flex-direction: row;
+    display: flex;
+
+    .logo {
+      margin-top: 15vmin;
+      margin-bottom: 4vmin;
+      margin-left: 2vmin;
+      margin-right: 2vmin;
+      width: 25vmax;
+      height: 25vmax;
+      flex: 1 1 auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('../../../../assets/icons/logo.svg');
+    }
+
+    .logo2 {
+      @extend .logo;
+      background-image: url('../../../../assets/icons/black-logo.svg');
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@value fontUpload from '../font-upload/module.scss';
+
+.configFont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    font-size: 1vw;
+    margin-bottom: 0.1vw;
+  }
+
+  .selectRow {
+    width: 50%;
+    height: 1.5vw;
+    margin-bottom: 0.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    select {
+      width: 70%;
+      height: 100%;
+      border: 0.1vw solid #c1c1c1;
+      background: transparent;
+    }
+
+    .fontUpload {
+      width: 15%;
+      height: 90%;
+    }
+  }
+
+  .fontExample {
+    width: 100%;
+    flex: 1;
+    background: #35353e;
+    border-radius: 1vw;
+    padding: 2%;
+  }
+}

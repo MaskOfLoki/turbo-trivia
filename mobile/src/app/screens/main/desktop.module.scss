@@ -1,0 +1,27 @@
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  .header {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mainContent {
+    @extend .header;
+    position: relative;
+    height: 88%;
+
+    &.isXEO {
+      height: 100%;
+    }
+  }
+}

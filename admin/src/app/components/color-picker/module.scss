@@ -1,0 +1,44 @@
+@import '../../utils/index.scss';
+
+.colorPicker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .picker {
+    position: relative;
+    width: 1.85vw;
+    height: 1.85vw;
+    border-radius: 0.5vw;
+
+    .clearColor {
+      cursor: pointer;
+      position: absolute;
+      top: -0.25vw;
+      right: -0.25vw;
+      width: 1vw;
+      height: 1vw;
+      font-size: 0.6vw;
+      text-align: center;
+      border-radius: 50%;
+      background-color: black;
+      opacity: 0.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: whitesmoke;
+    }
+  }
+
+  .editBtn {
+    @extend .button;
+    width: 1.5vw;
+    height: 1.25vw;
+    margin-left: 0.5vw;
+    mask-image: url('../../../assets/icons/pencil.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    background: #21abfc;
+  }
+}

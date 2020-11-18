@@ -1,0 +1,66 @@
+.highlightedInput {
+  width: 95%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 0.6vmin solid white;
+    outline: none;
+    color: white;
+    padding-bottom: 1vmin;
+    font-size: 6vmin;
+    text-align: center;
+
+    &::placeholder {
+      color: #6f6f74;
+    }
+  }
+
+  .line {
+    height: 0.75vmin;
+    width: 0%;
+    bottom: 0;
+    background: #01ecfc;
+    display: inline-block;
+    transition: 0.3s width ease-in-out;
+    position: absolute;
+    box-shadow: 0 0 1vmin #01ecfc;
+  }
+
+  .tooltip {
+    bottom: -6vmin;
+    position: absolute;
+    font-size: 4vmin;
+    color: #6f6f74;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+
+  & input:focus ~ .line {
+    width: 105%;
+    background-color: #01ecfc;
+  }
+
+  & input:focus ~ .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .gc-highlighted-input {
+    .gc-input {
+      margin-top: 2%;
+    }
+
+    .tooltip {
+      font-size: 2vmax;
+    }
+  }
+}

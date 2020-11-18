@@ -1,0 +1,100 @@
+@import '../../../utils/desktop.scss';
+
+.screen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .profileBar {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #5400c6, #ac007d);
+    .profileText {
+      font-size: 6vmin;
+      margin: 0 auto;
+    }
+  }
+
+  .mainContent {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+
+    .inputRow {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2.5%;
+      position: relative;
+      margin-top: 2.5%;
+
+      .input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 0.2vmax solid white;
+        outline: none;
+        color: white;
+        padding-bottom: 0.5vmax;
+        font-size: 3vmax;
+        text-align: center;
+
+        &::placeholder {
+          color: #6f6f74;
+        }
+      }
+
+      .line {
+        height: 0.3vmax;
+        width: 0%;
+        bottom: 0;
+        background: #01ecfc;
+        display: inline-block;
+        transition: 0.3s width ease-in-out;
+        position: absolute;
+        box-shadow: 0 0 0.5vmax #01ecfc;
+      }
+
+      .tooltip {
+        bottom: -3vmax;
+        position: absolute;
+        font-size: 2vmax;
+        color: #6f6f74;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+      }
+
+      & input:focus ~ .line {
+        width: 101%;
+        background-color: #01ecfc;
+      }
+
+      & input:focus ~ .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .saveBtn {
+      @extend .button;
+      margin-top: 2%;
+      padding: 1% 7% 1% 7%;
+      font-weight: normal;
+      color: #6f6f74;
+      border: 0.4vmax solid #6f6f74;
+      border-radius: 5vmax;
+    }
+  }
+}

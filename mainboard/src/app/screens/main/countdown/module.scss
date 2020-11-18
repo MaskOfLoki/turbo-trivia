@@ -1,0 +1,60 @@
+.screen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .layoutRow {
+    display: inline-flex;
+
+    .layoutCol {
+      width: 40vmax;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .logoRow {
+        width: 100%;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+        display: flex;
+
+        .logo {
+          margin-top: 15vmin;
+          margin-bottom: 4vmin;
+          margin-left: 2vmin;
+          margin-right: 2vmin;
+          width: 25vmax;
+          height: 25vmax;
+          flex: 1 1 auto;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-image: url('../../../../assets/icons/logo.svg');
+        }
+
+        .logo2 {
+          @extend .logo;
+          background-image: url('../../../../assets/icons/black-logo.svg');
+        }
+      }
+
+      .countDownText {
+        font-size: 4vw;
+        font-weight: bold;
+        margin-top: -4vh;
+        width: 90%;
+      }
+    }
+    .circleChart {
+      width: 40vmax;
+      align-items: center;
+      justify-items: center;
+      margin-top: 8vmax;
+      margin-left: 6vmax;
+    }
+  }
+}

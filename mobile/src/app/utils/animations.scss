@@ -1,0 +1,52 @@
+@keyframes boxFade {
+  from {
+    transform: scale(1.1);
+    box-shadow: 0 0 2.5vmin 1.5vmin lightblue;
+  }
+  to {
+    transform: scale(0.9);
+    box-shadow: 0 0 lightblue;
+  }
+}
+
+@keyframes anime-points {
+  0% {
+    border: 0.2vmin solid #ff00bd;
+    transform: scale(0.9);
+  }
+  25% {
+    border: 0.2vmin solid #ff00bd;
+    transform: scale(3);
+  }
+  50%{
+    border: 0.2vmin solid #ff00bd;
+    transform: scale(3);
+  }
+  75% {
+    opacity: 0.9;
+    border: 0.2vmin solid #ff00bd;
+    transform: scale(3) translateY(5px);
+  }
+  100% {
+    opacity: 0;
+    border: 0.2vmin solid #ff00bd;
+    transform: scale(3) translateY(-30px);
+  }
+}
+
+@keyframes anime-fadeIn-l2r {
+  from{
+    transform: translateX(-100px);
+  } to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes anime-sidenav-gleam {
+  from{
+    top: 0
+  }
+  to {
+    top: 100%
+  }
+}

@@ -1,0 +1,68 @@
+@import '../../../utils/index.scss';
+
+.control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .percentageRow {
+    display: flex;
+    flex-direction: row;
+    .label {
+      color: white;
+      font-size: 1vw;
+      font-weight: bold;
+      margin-left: 1vw;
+    }
+  }
+
+  .percentageBtn {
+    width: 100%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    button {
+      background: rgba(56, 56, 65, 0.25);
+      border: 0.1vw solid #6f6f74;
+      width: 37%;
+      font-weight: normal;
+      color: #6f6f74;
+      min-height: 2.5vw;
+      border-radius: 2vw;
+      margin-right: 5%;
+      font-size: 1vw;
+
+      &.selected {
+        color: white;
+        border-width: 0.15vw;
+        border-color: #01ecfc;
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: inset 0 0 1vw #01ecfb, 0 0 1vw #01ecfc;
+      }
+    }
+  }
+
+  .percentageValue {
+    width: 90%;
+    height: 2.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2.5%;
+    .percentageValueItem {
+      @extend .label;
+      flex: 1;
+      font-size: 2.5vw;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}

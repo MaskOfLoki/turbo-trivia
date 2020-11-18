@@ -1,0 +1,134 @@
+@import '../../../utils/index.scss';
+
+.screen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .label {
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+  }
+
+  .leftPanel {
+    width: 30%;
+    height: 90%;
+    border-radius: 1.5vw;
+    background: #1a1a29;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoRow {
+      width: 100%;
+      height: 50%;
+      margin-top: 5%;
+      display: flex;
+      flex-direction: row;
+
+      .teamLogo {
+        width: 40%;
+        margin-left: 5%;
+        margin-right: 5%;
+
+        .label {
+          font-size: 1vw;
+          margin-top: 5%;
+          margin-bottom: 5%;
+        }
+
+        .upload {
+          width: 12vw;
+          height: 12vw;
+          button {
+            min-height: 1.75vw;
+            height: 1.75vw;
+            width: auto;
+            padding-left: 1vw;
+            padding-right: 1vw;
+          }
+        }
+      }
+
+      .sponsorLogo {
+        @extend .teamLogo;
+      }
+    }
+
+    .fontTypeRow {
+      margin-left: 5%;
+      width: 80%;
+      height: 30%;
+      margin-bottom: 2.5%;
+      margin-right: 15%;
+      select {
+        width: 90%;
+      }
+    }
+  }
+
+  .middlePanel {
+    margin-left: 1.5%;
+    width: 37.5%;
+    height: 90%;
+    border-radius: 1.5vw;
+    background: #1a1a29;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rightPanel {
+    margin-left: 1.5%;
+    width: 22.5%;
+    height: 80%;
+    border-radius: 1.5vw;
+    background: #1a1a29;
+    padding: 2% 1.5% 2% 1.5%;
+
+    .label {
+      height: 10%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .colorPanel {
+      width: 95%;
+      height: 80%;
+      background: #35353e;
+      border-radius: 1vw;
+      padding-top: 10%;
+      padding-left: 2%;
+      display: flex;
+      flex-direction: column;
+
+      .colorItemRow {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1vw;
+        width: 92.5%;
+        margin-left: 2.5%;
+
+        .colorItemText {
+          font-size: 1vw;
+          font-weight: bold;
+          color: white;
+        }
+
+        .space {
+          margin: 0 auto;
+        }
+
+        .colorItem {
+          width: 4vw;
+        }
+      }
+    }
+  }
+}

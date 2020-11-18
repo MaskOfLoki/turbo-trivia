@@ -1,0 +1,197 @@
+@import '../../utils/mobile.scss';
+
+.frontGate {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 0.5vmin solid white;
+    outline: none;
+    color: white;
+    padding-bottom: 1vmin;
+    font-size: 6vmin;
+    text-align: center;
+    height: auto;
+    border-radius: 0;
+    box-sizing: border-box;
+
+    &:focus {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &::placeholder {
+      color: #6f6f74;
+    }
+  }
+
+  .groupInput {
+    width: 67.5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 10%;
+
+    .line {
+      height: 0.75vmin;
+      width: 0%;
+      bottom: 0;
+      background: #01ecfc;
+      display: inline-block;
+      transition: 0.3s width ease-in-out;
+      position: absolute;
+      box-shadow: 0 0 1vmin #01ecfc;
+    }
+
+    .tooltip {
+      bottom: -6vmin;
+      position: absolute;
+      font-size: 4vmin;
+      color: #6f6f74;
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s, opacity 0.5s linear;
+    }
+
+    & input:focus ~ .line {
+      width: 100%;
+      background-color: #01ecfc;
+    }
+
+    & input ~ .tooltip:not(.hasValue) {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  .phoneInputRow {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .groupUsername {
+      @extend .groupInput;
+    }
+
+    .phoneCodeAndNumber {
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .groupPhoneCode {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10%;
+        position: relative;
+
+        .tooltip {
+          bottom: -6vmin;
+          position: absolute;
+          font-size: 4vmin;
+          color: #6f6f74;
+          visibility: visible;
+          opacity: 1;
+          transition: visibility 0s, opacity 0.5s linear;
+        }
+      }
+
+      .groupPhone {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5%;
+
+        .phoneCode {
+          font-weight: bold;
+          font-size: 6vmin;
+          margin-bottom: 1vmin;
+          width: 10%;
+        }
+
+        .groupPhoneInput {
+          @extend .groupInput;
+          width: 78.5%;
+        }
+      }
+    }
+
+    .optinCheckBox {
+      width: 85%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .inputCheckbox {
+        width: 10%;
+        height: 6vmin;
+      }
+
+      .inputLabel {
+        width: 78%;
+        font-size: 4vmin;
+      }
+    }
+
+    .verifyText {
+      width: 75%;
+      color: #6f6f74;
+      font-size: 4vmin;
+      margin-top: 2.5%;
+      text-align: center;
+      margin-bottom: 5%;
+    }
+
+    .groupVerify {
+      @extend .groupInput;
+    }
+  }
+
+  .buttons {
+    width: 100%;
+    height: 17.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+
+    .sendSMSBtn {
+      padding: 2.5% 8% 2.5% 8%;
+      font-weight: normal;
+      color: white;
+      border: 0.8vmin solid white;
+      border-radius: 10vmin;
+
+      &:active, &:hover {
+        animation: boxFade .5s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  .logo {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 80%;
+    flex: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../../assets/icons/logo.svg');
+  }
+}

@@ -1,0 +1,112 @@
+.control {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  $controlBarHeight: 7.5vmin;
+  $marginTop: 0.5vmin;
+
+  .videoWrapper {
+    width: 85%;
+    margin-top: $marginTop * 2;
+    height: calc(100% - #{$controlBarHeight} - #{$marginTop * 3});
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
+
+    &.isFullWidth {
+      width: 100%;
+      margin-top: 0;
+      height: calc(100% - #{$controlBarHeight} - #{$marginTop});
+    }
+
+    .video {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .playBtnWrapper {
+      position: absolute;
+      width: 15vmin;
+      height: 15vmin;
+      border: 1vmin solid white;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .playBtn {
+        margin-left: 5%;
+        width: 65%;
+        height: 70%;
+        background: white;
+        mask: no-repeat center;
+        mask-size: contain;
+        mask-image: url('../../../../../../assets/icons/media-play.svg');
+      }
+    }
+  }
+
+  .controlBar {
+    width: 85%;
+    height: $controlBarHeight;
+    margin-top: $marginTop;
+    font-size: 3vmin;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .progressBar {
+      width: 40%;
+      height: 30%;
+      background: #6f6f74;
+      border-radius: 7.5vmin;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      .progressValue {
+        position: absolute;
+        height: 125%;
+        border-radius: 20vmin;
+        background: white;
+      }
+    }
+
+    .mediaDuration {
+      width: 27.5%;
+      font-size: 2.5vmin;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .muteBtn {
+      width: 12.5%;
+      height: 70%;
+      mask: no-repeat center;
+      mask-size: contain;
+      background: white;
+      mask-image: url('../../../../../../assets/icons/sound-mute.svg');
+
+      &.isUnmuted {
+        mask-image: url('../../../../../../assets/icons/sound-unmute.svg');
+      }
+    }
+  }
+}

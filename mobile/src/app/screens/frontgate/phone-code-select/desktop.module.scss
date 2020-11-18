@@ -1,0 +1,38 @@
+.control {
+  width: 45%;
+  select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 0.1vmax solid white;
+    outline: none;
+    color: white;
+    padding-bottom: 0.2vmax;
+    font-size: 2.4vmax;
+    text-align: center;
+    height: auto;
+    text-align: -webkit-center;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('../../../../assets/images/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 1.25vmax;
+    background-size: 1.25vmax;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    option {
+      background: black;
+      color: #6f6f74;
+      font-size: 2vmax;
+    }
+  }
+}

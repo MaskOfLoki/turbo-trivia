@@ -1,0 +1,36 @@
+.screen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .countDownText {
+    width: 85%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 7.5vmin;
+    font-family: Arial, serif;
+    align-items: center;
+    font-weight: 300;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .circleChart {
+    width: 50vmin;
+    height: 50vmin;
+  }
+
+  .logo {
+    margin-top: 10%;
+    margin-bottom: 6%;
+    width: 40vmin;
+    height: 40vmin;
+    background: url('../../../../../assets/icons/logo.svg') center no-repeat;
+    background-size: contain;
+  }
+}

@@ -1,0 +1,246 @@
+@import '../../../utils/index.scss';
+
+.screen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .label {
+    color: white;
+    font-size: 1.4vw;
+    font-weight: bold;
+  }
+
+  .questionPanel {
+    width: 70%;
+    height: 90%;
+    border-radius: 1.5vw;
+    background: #1a1a29;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .questionPanelLeft {
+      width: 59%;
+      height: 90%;
+      margin-right: 2.5%;
+
+      .presetRow {
+        width: 100%;
+        height: 5.5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1.75%;
+      }
+
+      .addQuestionRow {
+        width: 100%;
+        height: 7.5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0.25%;
+        .addQuestionBtn {
+          @extend .button;
+          margin-left: 0.5vw;
+          color: #21abfc;
+          font-size: 2vw;
+        }
+      }
+
+      .questionListWrapper {
+        width: 96%;
+        height: 80%;
+        background: rgba(56, 56, 65, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0.75vw;
+        padding: 2%;
+
+        .questionList {
+          width: 100%;
+          height: 100%;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          &:focus {
+            outline: none !important;
+          }
+
+          .questionItem {
+            width: 38vw;
+            height: 2.5vw;
+            margin-bottom: 0.5vw;
+            background: rgba(101, 101, 101, 0.42);
+            border: 0.2vw solid rgba(111, 111, 116, 1);
+            border-radius: 0.5vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            outline: none !important;
+
+            &.draggable-mirror {
+              opacity: 0.5;
+            }
+
+            .questionTitle {
+              margin-left: 2%;
+              color: white;
+              font-size: 1.25vw;
+              font-weight: bold;
+              width: 75%;
+              display: inline-block;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+
+            .space {
+              margin: 0 auto;
+            }
+
+            .questionViewBtn {
+              @extend .button;
+              width: 1.75vw;
+              height: 1.5vw;
+              mask-image: url('../../../../assets/icons/view.svg');
+              mask-repeat: no-repeat;
+              mask-position: center;
+              mask-size: contain;
+              background: white;
+              margin-right: 0.3vw;
+            }
+
+            .questionEditBtn {
+              @extend .questionViewBtn;
+              mask-image: url('../../../../assets/icons/edit.svg');
+              margin-right: 0.25vw;
+            }
+
+            .questionDeleteBtn {
+              @extend .questionEditBtn;
+              mask-image: url('../../../../assets/icons/trash.svg');
+            }
+
+            &.selected {
+              background: rgba(67, 208, 255, 0.35);
+              border-color: #44cee3;
+            }
+          }
+        }
+      }
+    }
+
+    .questionPanelRight {
+      width: 32.5%;
+      height: 90%;
+      .label {
+        height: 7.5%;
+        align-items: center;
+        display: flex;
+      }
+
+      .previewWrapper {
+        width: 90%;
+        height: 86%;
+        background: rgba(101, 101, 101, 0.42);
+        border-radius: 0.75vw;
+        padding: 5% 2% 5% 2%;
+
+        .preview {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .question {
+            width: 86%;
+            height: 40%;
+            margin-bottom: 5%;
+            background: rgba(105, 105, 105, 0.44);
+            border: 0.2vw solid #707070;
+            border-radius: 1vw;
+            overflow: hidden;
+          }
+
+          .answerList {
+            width: 90%;
+            height: 55%;
+          }
+        }
+      }
+    }
+  }
+
+  .roundPanel {
+    margin-left: 2.5%;
+    width: 21%;
+    height: 82%;
+    border-radius: 1vw;
+    background: #1a1a29;
+    padding: 1.5%;
+
+    .roundSelectRow {
+      height: 8%;
+      color: white;
+      .label {
+        font-size: 1vw;
+      }
+    }
+
+    .titleCountDownRow {
+      display: flex;
+      flex-direction: row;
+      margin-top: 2.5%;
+      width: 70%;
+      margin: 0 auto;
+      align-items: center;
+
+      .label {
+        color: #a5a5a5;
+        font-weight: bold;
+        font-size: 1vw;
+        margin-right: 5%;
+      }
+
+      .input {
+        width: 20%;
+        height: 1.25vw;
+        border: 0.1vw solid #707070;
+        color: #a5a5a5;
+        background: #4a4a52;
+        text-align: center;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .timerCountDownRow {
+      margin: 0 auto;
+      margin-top: 2.5%;
+      width: 85%;
+      height: 42%;
+    }
+
+    .pointCountDownRow {
+      @extend .timerCountDownRow;
+    }
+  }
+}

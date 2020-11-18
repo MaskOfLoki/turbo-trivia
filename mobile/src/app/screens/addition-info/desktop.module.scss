@@ -1,0 +1,176 @@
+@import '../../utils/desktop.scss';
+
+.additionInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 0.1vmax solid white;
+    outline: none;
+    color: white;
+    padding-bottom: 0.2vmax;
+    font-size: 2.5vmax;
+    text-align: center;
+    height: auto;
+
+    &::placeholder {
+      color: #6f6f74;
+    }
+  }
+
+  select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 0.1vmax solid white;
+    outline: none;
+    color: white;
+    padding-bottom: 0.2vmax;
+    font-size: 2.25vmax;
+    text-align: center;
+    height: auto;
+
+    text-align-last: center;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    option {
+      background: black;
+      color: #6f6f74;
+      font-size: 2vmax;
+    }
+  }
+
+  .groupInput {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 1.75%;
+
+    .line {
+      height: 0.3vmax;
+      width: 0%;
+      bottom: 0;
+      background: #01ecfc;
+      display: inline-block;
+      transition: 0.3s width ease-in-out;
+      position: absolute;
+      box-shadow: 0 0 0.5vmax #01ecfc;
+    }
+
+    .tooltip {
+      bottom: -1.5vmax;
+      position: absolute;
+      font-size: 1vmax;
+      color: #6f6f74;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.5s linear;
+    }
+
+    & input:focus ~ .line {
+      width: 101%;
+      background-color: #01ecfc;
+    }
+
+    & input:focus ~ .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    & select:focus ~ .line {
+      width: 101%;
+      background-color: #01ecfc;
+    }
+
+    & select:focus ~ .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .inputRow {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .title {
+      font-size: 2.5vmax;
+      margin-bottom: 2.5vmax;
+    }
+
+    .groupCommon {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 45%;
+      align-items: flex-end;
+      margin-bottom: 2vmax;
+
+      .label {
+        font-weight: bold;
+        font-size: 4vmin;
+        margin-bottom: 1vmin;
+        width: 25%;
+        text-align: left;
+      }
+
+      .groupLine {
+        @extend .groupInput;
+        width: 75%;
+      }
+
+      .groupSelectLine {
+        @extend .groupInput;
+        width: 75%;
+      }
+    }
+  }
+
+  .buttons {
+    width: 100%;
+    height: 17.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .nextBtn {
+      @extend .button;
+      padding: 1% 5% 1% 5%;
+      font-weight: normal;
+      color: #6f6f74;
+      border: 0.2vmax solid #6f6f74;
+      border-radius: 10vmax;
+    }
+  }
+
+  .logo {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    width: 80%;
+    flex: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../../assets/icons/logo.svg');
+  }
+}

@@ -1,0 +1,285 @@
+@import '../../../utils/index.scss';
+
+.screen {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .label {
+    color: white;
+    font-size: 1.4vw;
+    font-weight: bold;
+  }
+
+  input {
+    width: 14.5vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    background: #35353e;
+    border: none;
+    border-radius: 0.4vw;
+    color: white;
+    font-size: 0.9vw;
+    height: 2vw;
+    padding-left: 0.5vw;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .gameSettings {
+    width: 65%;
+    height: 90%;
+    border-radius: 1.5vw;
+    background: #1a1a29;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .left {
+      width: 28%;
+      margin-right: 4%;
+
+      .gameTitle {
+        margin-top: 5%;
+        .label {
+          font-size: 1vw;
+          margin-bottom: 0.5vw;
+        }
+      }
+
+      .postGameMessage {
+        margin-top: 5%;
+        .label {
+          font-size: 1vw;
+          margin-bottom: 0.5vw;
+        }
+      }
+    }
+
+    .middle {
+      width: 28%;
+      margin-right: 4%;
+      .signUp {
+        margin-top: 5%;
+        .label {
+          font-size: 1.2vw;
+          margin-bottom: 0.5vw;
+        }
+
+        .slider {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .label {
+            font-size: 1vw;
+            margin-left: 0.5vw;
+            margin-bottom: 0vw;
+          }
+        }
+      }
+
+      .defaultUsernamePrefix {
+        margin-top: 5%;
+        .label {
+          font-size: 1vw;
+          margin-bottom: 0.5vw;
+        }
+      }
+
+      .signUpFields {
+        margin-top: 5%;
+        .label {
+          font-size: 1vw;
+          margin-bottom: 0.5vw;
+          display: flex;
+          align-items: center;
+
+          .addFieldBtn {
+            font-size: 2vw;
+            background: transparent;
+            line-height: 1vw;
+            color: #21abfc;
+            width: 2vw;
+          }
+        }
+
+        input {
+          width: 95%;
+        }
+
+        .fieldRow {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .fieldEditBtn {
+            width: 1.75vw;
+            height: 1.5vw;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            mask-size: contain;
+            background: white;
+            margin-right: 0.3vw;
+            mask-image: url('../../../../assets/icons/edit.svg');
+            margin-right: 0.25vw;
+            margin-left: 0.25vw;
+          }
+
+          .fieldDeleteBtn {
+            @extend .fieldEditBtn;
+            mask-image: url('../../../../assets/icons/trash.svg');
+            margin-right: 0vw;
+          }
+        }
+      }
+    }
+
+    .right {
+      width: 29%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .optin {
+        width: 100%;
+        margin-top: 5%;
+        .label {
+          font-size: 1.2vw;
+          margin-bottom: 0.5vw;
+        }
+
+        .slider {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 1vw;
+          .label {
+            font-size: 1vw;
+            margin-left: 0.5vw;
+            margin-bottom: 0vw;
+          }
+
+          &:last-child {
+            margin-top: 1vw;
+            margin-bottom: 0vw;
+          }
+        }
+      }
+
+      .termsURL {
+        width: 100%;
+        margin-top: 5%;
+        .label {
+          font-size: 1vw;
+          margin-bottom: 0.5vw;
+        }
+      }
+
+      .privacyURL {
+        @extend .termsURL;
+        margin-top: 7.5%;
+      }
+
+      .credential {
+        width: 70%;
+        height: 7.5%;
+        margin-top: 10%;
+        font-size: 1vw;
+        background: linear-gradient(to right, #01ecfc, #002ad8);
+      }
+    }
+
+    &.isXeo {
+      width: 35%;
+      padding-left: 7.5%;
+      padding-right: 7.5%;
+
+      .left {
+        width: 70%;
+      }
+    }
+  }
+
+  .publish {
+    margin-left: 2.5%;
+    width: 24%;
+    height: 65%;
+    border-radius: 1vw;
+    background: #1a1a29;
+    padding: 1.5%;
+    margin-bottom: 7.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .roundSelectRow {
+      display: flex;
+      flex-direction: row;
+      height: 7.5%;
+      color: white;
+      margin-top: 2%;
+      margin-bottom: 3%;
+      .label {
+        font-size: 1.25vw;
+        line-height: 2vw;
+      }
+
+      .space {
+        margin: 0 auto;
+      }
+    }
+
+    .presetRow {
+      height: 10%;
+
+      select {
+        width: 15vw;
+        margin-right: 0;
+        background: #35353e;
+
+        option {
+          background: #35353e;
+        }
+      }
+    }
+
+    .questionRevealRow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0.25vw;
+
+      .label {
+        font-size: 1.25vw;
+      }
+
+      $borderWidth: 0.09vw;
+      $inputHeight: 2.25vw;
+    }
+
+    .questionIntermissionRow {
+      @extend .questionRevealRow;
+    }
+
+    .publishBtn {
+      width: 15vw;
+      height: 15%;
+      margin-top: 2.5%;
+      font-size: 2vw;
+      background: linear-gradient(to right, #01ecfc, #002ad8);
+    }
+  }
+}

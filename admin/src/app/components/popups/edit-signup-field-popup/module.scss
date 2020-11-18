@@ -1,0 +1,169 @@
+@import '../../../utils/index.scss';
+
+.popup {
+  width: 40%;
+  background: #12131d;
+  box-shadow: 1px 3px 20px 3px rgba(199, 199, 199, 0.14);
+  border-radius: 0.5vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1vw;
+  overflow: hidden;
+
+  .header {
+    width: 100%;
+    height: 2.5vw;
+    background: linear-gradient(to right, #521c00 0%, #ff8d1c 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .title {
+      margin-left: 5%;
+      color: white;
+      font-size: 0.9vw;
+      font-weight: bold;
+    }
+
+    .space {
+      margin: 0 auto;
+    }
+
+    .saveBtn {
+      width: 12.5%;
+      font-size: 0.7vw;
+      min-height: 1.65vw;
+      background: linear-gradient(to right, #21abfc 0%, #00578b 100%);
+    }
+
+    .closeBtn {
+      @extend .button;
+      width: 5%;
+      height: 35%;
+      margin-left: 2.5%;
+      margin-right: 4%;
+      background: url('../../../../assets/icons/close.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .groupButtons {
+      width: 87.5%;
+      height: 1.9vw;
+      padding-top: 1vw;
+      padding-bottom: 1vw;
+      display: flex;
+      flex-direction: row;
+
+      button {
+        width: 30%;
+        margin-right: 2.5%;
+        background: rgba(103, 103, 103, 0.17);
+        border: 0.15vw solid #46464d;
+        color: #ffffff7f;
+        font-size: 0.75vw;
+        font-weight: bold;
+
+        &.selected {
+          background: rgba(68, 206, 227, 0.4);
+          border-color: #44cee3;
+          box-shadow: 0 0 0.5vw 0px rgb(68, 206, 227);
+        }
+      }
+    }
+
+    .divider {
+      width: 90%;
+      border-bottom: 0.1vw solid #6f6f74;
+    }
+
+    .groupChoices {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1vw;
+      overflow: auto;
+      height: 18vw;
+
+      &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .choiceHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 1vw;
+        color: white;
+        margin-bottom: 0.5vw;
+
+        button {
+          margin-left: 0.5vw;
+          font-size: 1.5vw;
+          display: flex;
+          align-items: center;
+          border: none;
+          width: 2vw;
+          color: #21abfc;
+          background: transparent;
+        }
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        height: 4vw;
+        padding-right: 5%;
+
+        .labelIndex {
+          color: white;
+          margin-right: 0.5vw;
+          font-size: 1vw;
+          margin-top: 0.5vw;
+          width: 5%;
+        }
+
+        button {
+          margin-left: 0.5vw;
+          font-size: 1.5vw;
+          display: flex;
+          align-items: center;
+          border: none;
+          width: 2vw;
+          color: #21abfc;
+          outline: none;
+
+          &.deleteButton {
+            background-color: #21abfc;
+            mask: url('../../../../assets/icons/trash.svg') no-repeat center;
+            mask-size: contain;
+            width: 1.5vw;
+            margin-bottom: 2vw;
+            margin-left: 1vw;
+            background: white;
+          }
+        }
+
+        .spacer {
+          width: 2.53vw;
+        }
+      }
+    }
+
+    .mainContainer {
+      width: 80%;
+      height: 22vw;
+      padding-top: 2vw;
+      padding-bottom: 2vw;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

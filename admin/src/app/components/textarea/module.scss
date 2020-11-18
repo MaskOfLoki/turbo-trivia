@@ -1,0 +1,52 @@
+$borderWidth: 0.09vw;
+$inputHeight: 1.75vw;
+
+.groupTextArea {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .inputWrapper {
+    width: 100%;
+
+    textarea {
+      width: 95%;
+      background: transparent;
+      border: $borderWidth #c1c1c1 solid;
+      border-radius: 0.4vw;
+      color: #919191;
+      font-size: 0.8vw;
+      padding-left: 0.5vw;
+      padding-top: 0.5vw;
+      font-size: 0.8vw;
+      height: $inputHeight * 2;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-size: 0.75vw;
+      }
+    }
+
+    .characterLabel {
+      color: #c1c1c1;
+      margin-left: 0.5vw;
+      text-align: left;
+      font-size: 0.7vw;
+    }
+  }
+
+  &.error {
+    input {
+      border: $borderWidth red solid;
+    }
+  }
+}

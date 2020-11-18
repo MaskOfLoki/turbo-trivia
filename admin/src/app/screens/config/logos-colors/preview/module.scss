@@ -1,0 +1,75 @@
+@import '../../../../utils/index.scss';
+
+.editQuestionPopup {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .previewContainer {
+      width: 100%;
+      flex: 1;
+      margin-top: 2.5%;
+      margin-bottom: 2.5%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .previewLeftBtn {
+        @extend .button;
+        width: 7.5%;
+        height: 3.5vw;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-image: url('../../../../../assets/icons/preview-arrow-left.svg');
+        mask-size: contain;
+        background: white;
+      }
+
+      .previewRightBtn {
+        @extend .previewLeftBtn;
+        mask-image: url('../../../../../assets/icons/preview-arrow-right.svg');
+      }
+
+      .previewWrapper {
+        flex: 1;
+        height: 100%;
+        border-radius: 1vw;
+        background: #35353e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .preview {
+          width: 95%;
+          height: 45%;
+          &:first-child {
+            margin-bottom: 2.5%;
+          }
+        }
+
+        &.mobile {
+          flex-direction: row;
+          .preview {
+            width: 45%;
+            height: 90%;
+            &:first-child {
+              margin-bottom: 0%;
+              margin-right: 2.5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@import '../../../utils/index.scss';
+
+.control {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .buttonWrapper {
+    height: 10%;
+    margin-bottom: 2.5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    .leaderboardBtn {
+      @extend .button;
+      width: 45%;
+      height: 90%;
+      font-weight: bold;
+      background: transparent;
+      border: 0.15vw solid #6f6f74;
+
+      &.selected {
+        background: #dc76167f;
+        border: 0.15vw solid #dc7616;
+      }
+    }
+
+    .bannedBtn {
+      @extend .leaderboardBtn;
+    }
+  }
+
+  .container {
+    height: 87.5%;
+    width: 96%;
+    background: rgba(56, 56, 65, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.75vw;
+
+    .list {
+      width: 88%;
+      height: 96%;
+      margin-top: 2%;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+
+      .leaderItem {
+        width: 97.5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1vw;
+        height: 3vw;
+
+        .no {
+          width: 15%;
+        }
+
+        .name {
+          width: 60%;
+        }
+
+        .space {
+          margin: 0 auto;
+        }
+
+        .points {
+          width: 20%;
+        }
+
+        .removeBtn {
+          @extend .button;
+          width: 10%;
+          height: 50%;
+          mask-repeat: no-repeat;
+          mask-position: center;
+          mask-size: contain;
+          mask-image: url('../../../../assets/icons/trash.svg');
+          background: white;
+        }
+
+        .unbanBtn {
+          @extend .removeBtn;
+          height: 35%;
+          mask-image: url('../../../../assets/icons/restore.svg');
+        }
+      }
+    }
+  }
+}

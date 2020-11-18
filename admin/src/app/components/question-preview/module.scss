@@ -1,0 +1,38 @@
+.control {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+
+  .questionNo {
+    font-size: 1.75vw;
+    font-weight: bold;
+    margin-bottom: 0.5vw;
+    z-index: 1;
+  }
+
+  .video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .questionText {
+    width: 95%;
+    font-size: 1.5vw;
+    text-align: center;
+    z-index: 1;
+    max-height: 60%;
+  }
+}

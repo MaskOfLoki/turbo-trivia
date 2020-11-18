@@ -1,0 +1,271 @@
+@import '../../../utils/index.scss';
+
+.editQuestionPopup {
+  width: 40%;
+  background: #12131d;
+  box-shadow: 1px 3px 20px 3px rgba(199, 199, 199, 0.14);
+  border-radius: 0.5vw;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1vw;
+  overflow: hidden;
+
+  .header {
+    width: 100%;
+    height: 2.5vw;
+    background: linear-gradient(to right, #521c00 0%, #ff8d1c 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .title {
+      margin-left: 5%;
+      color: white;
+      font-size: 0.9vw;
+      font-weight: bold;
+    }
+
+    .space {
+      margin: 0 auto;
+    }
+
+    .saveBtn {
+      width: 12.5%;
+      font-size: 0.7vw;
+      min-height: 1.65vw;
+      background: linear-gradient(to right, #21abfc 0%, #00578b 100%);
+    }
+
+    .closeBtn {
+      @extend .button;
+      width: 5%;
+      height: 35%;
+      margin-left: 2.5%;
+      margin-right: 4%;
+      background: url('../../../../assets/icons/close.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .questionTypeRow {
+      width: 87.5%;
+      height: 1.9vw;
+      padding-top: 1vw;
+      padding-bottom: 1vw;
+      display: flex;
+      flex-direction: row;
+
+      button {
+        width: 30%;
+        margin-right: 2.5%;
+        background: rgba(103, 103, 103, 0.17);
+        border: 0.15vw solid #46464d;
+        color: #ffffff7f;
+        font-size: 0.75vw;
+        font-weight: bold;
+
+        &.selected {
+          background: rgba(68, 206, 227, 0.4);
+          border-color: #44cee3;
+          box-shadow: 0 0 0.5vw 0px rgb(68, 206, 227);
+        }
+      }
+    }
+
+    .divider {
+      width: 90%;
+      border-bottom: 0.1vw solid #6f6f74;
+    }
+
+    .questionContainer {
+      width: 91%;
+      height: 22vw;
+      padding-top: 2vw;
+      padding-bottom: 2vw;
+      display: flex;
+      flex-direction: row;
+
+      .leftCol {
+        width: 47.5%;
+        margin-right: 2.5%;
+        display: flex;
+        flex-direction: column;
+
+        .questionInputRow {
+          width: 94%;
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 1.5vw;
+          padding-left: 6%;
+
+          .questionInput {
+            width: 85%;
+            margin-right: 2.5%;
+
+            textarea {
+              height: 3vw;
+              background: transparent;
+              border-color: #c1c1c1;
+            }
+          }
+
+          .questionFile {
+            @extend .button;
+            width: 12.5%;
+            height: 2vw;
+            margin-top: 2vw;
+            mask-image: url('../../../../assets/icons/upload-multi.svg');
+            mask-repeat: no-repeat;
+            mask-position: center;
+            mask-size: contain;
+            background: rgba(255, 255, 255, 0.5);
+
+            &.selected {
+              background: rgb(0, 221, 255);
+            }
+          }
+        }
+
+        .answerListRow {
+          width: 100%;
+          height: 15vw;
+          display: flex;
+          flex-direction: column;
+          overflow-y: auto;
+
+          .answerItemRow {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.75vw;
+
+            .answerInputRow {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+
+              .answerRemoveBtn {
+                @extend .button;
+                width: 6%;
+                margin-right: 2%;
+                height: 1.5vw;
+                mask-image: url('../../../../assets/icons/trash.svg');
+                mask-repeat: no-repeat;
+                mask-position: center;
+                mask-size: contain;
+                background: rgba(255, 255, 255, 0.5);
+
+                &.hidden {
+                  visibility: hidden;
+                }
+              }
+
+              .answerInput {
+                width: 85%;
+                margin-right: 2.5%;
+                input {
+                  height: 1.3vw;
+                  background: transparent;
+                  border-color: #c1c1c1;
+                  font-size: 0.75vw;
+                }
+              }
+
+              .answerFile {
+                @extend .button;
+                width: 12.5%;
+                height: 1.75vw;
+                mask-image: url('../../../../assets/icons/upload.svg');
+                mask-repeat: no-repeat;
+                mask-position: center;
+                mask-size: contain;
+                background: rgba(255, 255, 255, 0.5);
+
+                &.selected {
+                  background: rgb(0, 221, 255);
+                }
+              }
+            }
+
+            .answerCheckboxRow {
+              width: 95%;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              margin-top: 0.35vw;
+              padding-left: 5%;
+
+              .answerCheckbox {
+                @extend .button;
+                width: 0.8vw;
+                height: 0.8vw;
+                border-radius: 50%;
+                border: 0.1vw solid #c1c1c1;
+                background: transparent;
+                margin-left: 0.5vw;
+                color: white;
+                font-size: 0.7vw;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.selected {
+                  background: #1fbaf2;
+                  border-color: white;
+
+                  &::before {
+                    content: '✔';
+                  }
+                }
+              }
+
+              .checkboxLabel {
+                margin-left: 0.5vw;
+                color: #c1c1c1;
+                font-size: 0.8vw;
+              }
+            }
+          }
+        }
+
+        .addQuestionRow {
+          margin-top: 1.5vw;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          .addQuestionBtn {
+            width: 50%;
+            background: rgba(103, 103, 103, 0.17);
+            border: 0.1vw solid #46464d;
+            font-size: 0.75vw;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .rightCol {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .box {
+          width: 17vw;
+          height: 17vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .userCountValue {
+    font-size: 2vw;
+  }
+}
